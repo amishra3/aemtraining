@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Video post page template"
+    jcr:primaryType="cq:Template"
+    jcr:title="RachelCruze.com Video Post Page"
+    allowedPaths="[/content/rachelcruze/en/*]"
+    ranking="{Long}2">
+    <jcr:content
+        body-classes="sidebar sidebar-post single single-post single-format-standard site_rachel_cruze desktop"
+        cq:designPath="/etc/designs/rachelcruze"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="rachelcruze/components/page/video-post"/>
+</jcr:root>

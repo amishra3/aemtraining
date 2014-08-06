@@ -1,0 +1,6 @@
+#base=js
+#ckeditor/ckeditor.js
+#ckeditor/build-config.js
+#ckeditor/config.js
+#ckeditor/styles.js
+nameslist.js

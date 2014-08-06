@@ -1,0 +1,6 @@
+<div data-sly-use.dataProvider="${'TitleDataProvider'}" data-sly-unwrap>
+    <a data-sly-test="${dataProvider.linkTo}" href="${dataProvider.linkTo}">
+        <h1 class="${dataProvider.preset}" data-sly-element="${dataProvider.tag}">${dataProvider.titleText}</h1>
+    </a>
+    <h1 data-sly-test="${!dataProvider.linkTo}" class="${dataProvider.preset}" data-sly-element="${dataProvider.tag}">${dataProvider.titleText}</h1>
+</div>
