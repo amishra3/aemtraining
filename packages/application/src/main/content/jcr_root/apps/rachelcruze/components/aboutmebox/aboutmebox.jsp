@@ -4,14 +4,6 @@
     com.day.cq.wcm.api.components.DropTarget,
     com.day.cq.wcm.foundation.Image, com.day.cq.wcm.foundation.Placeholder" %><%
 %><%@include file="/libs/foundation/global.jsp"%>
-<% if(WCMMode.fromRequest(slingRequest) == WCMMode.EDIT) { %>
-<style>
-    /* edit mode styling fix for dropping images */
-    p.info {
-        display: block;
-    }
-</style>
-<% } %>
 <%
     boolean isAuthoringUIModeTouch = Placeholder.isAuthoringUIModeTouch(slingRequest);
 
@@ -57,11 +49,17 @@
     <% image.draw(out); %>
     <%--<img src="<%= image.getPath() %>.img.png"/>--%>
     <%--<p class="info <%= ddClassName %>"><%= properties.get("text") %></p>--%>
-    <cq:text property="text" tagName="p" tagClass="<%= "info " + ddClassName %>" escapeXml="true" placeholder="<%= placeholder %>"/>
+    <% if(WCMMode.fromRequest(slingRequest) == WCMMode.EDIT) { %>
+        <cq:text property="text" tagClass="<%= "info " + ddClassName %>" escapeXml="true" placeholder="<%= placeholder %>"/>
+    <% } else { %>
+        <cq:text property="text" tagName="p" tagClass="info" escapeXml="true"/>
+    <% } %>
     <%--<img src="//a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/daveramsey.com/media/3_way_universal/rachel_cruze/rachel_about_circle.png" alt="About Rachel Cruze">--%>
     <%--<p class="info">Rachel Cruze, Dave Ramsey’s daughter, grew up learning how money works. She has a heart to empower this generation to save, give, and live intentionally.</p>--%>
     <a class="btn" href="#">about me</a>
     <a class="btn" href="#">subscribe</a>
-    <%--<cq:include path="socialsharingbar" resourceType="rachelcruze/components/socialsharingbar"/>--%>
+    <% //if (image.hasContent()) { %>
+        <%--<cq:include path="socialsharingbar" resourceType="rachelcruze/components/socialsharingbar"/>--%>
+    <% //} %>
 </section>
 <br style="clear: both;"/>
