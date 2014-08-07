@@ -21,7 +21,7 @@ public class TitleDataProvider extends WCMUse {
 
         String title = properties.get("jcr:title", "");
         preset = properties.get("preset", "");
-        linkTo = properties.get("linkto", null);
+        linkTo = properties.get("linkTo", null);
 
         //String title = properties.get(NameConstants.PN_TITLE, String.class);
         if (title == null || title.equals("")) {

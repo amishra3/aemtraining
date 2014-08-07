@@ -15,11 +15,16 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <rootPath
+                    <logoText
                         jcr:primaryType="nt:unstructured"
-                        fieldLabel="Root path"
+                        fieldLabel="Logo text"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        name="./rootPath"/>
+                        name="./logoText"/>
+                    <linkTo
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Link to"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        name="./linkTo"/>
                 </items>
             </column>
         </items>

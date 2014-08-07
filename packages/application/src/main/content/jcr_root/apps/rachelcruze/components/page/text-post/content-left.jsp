@@ -5,7 +5,7 @@
 <div class="content-wrapper">
     <div class="post-wrapper">
         <div class="single-media">
-            <cq:include path="post-hero-image" resourceType="foundation/components/image"/>
+            <sly:include path="post-hero-image" resourceType="foundation/components/image"/>
         </div>
         <div class="single-top">
             <div class="single-topic">

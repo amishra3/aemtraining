@@ -1,23 +1,33 @@
-package apps.rachelcruze.components.title;
+package apps.rachelcruze.components.topnav;
 
 import com.adobe.cq.sightly.WCMUse;
 import org.apache.sling.api.resource.ValueMap;
-import org.apache.commons.lang3.StringEscapeUtils;
-import com.day.cq.commons.Doctype;
-import com.day.cq.commons.DiffInfo;
-import com.day.cq.commons.DiffService;
-import org.apache.sling.api.resource.ResourceUtil;
-import com.day.cq.wcm.api.NameConstants;
+//import java.util.List;
+import com.day.cq.wcm.api.Page;
 
 public class TopNavDataProvider extends WCMUse {
 
-
+    //private List<Page> navLinks
+    private Page basePage;
 
     @Override
     public void activate() {
         ValueMap properties = getProperties();
-
-
+        //basePage = getCurrentPage().getAbsoluteParent(2);
+        String rootPath = properties.get("rootPath", getCurrentPage().getAbsoluteParent(2).getPath());
+        basePage = getPageManager().getPage(rootPath);
+        /*Iterator<Page> children = rootPage.listChildren(new PageFilter(request));
+        while (children.hasNext()) {
+            Page child = children.next();
+            navLinks.add(child);
+        }*/
     }
 
+    public Page getBasePage() {
+        return basePage;
+    }
+
+    /*public List<Page> getNavLinks() {
+        return navLinks;
+    }*/
 }

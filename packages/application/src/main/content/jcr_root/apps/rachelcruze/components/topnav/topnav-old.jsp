@@ -11,69 +11,33 @@
 
   ==============================================================================
 
-  Title component.
+  Top Navigation component
 
-  Draws a title either store on the resource or from the page
+  Draws the top navigation
 
 --%><%@include file="/libs/foundation/global.jsp"%><%
-%><%@ page import="org.apache.commons.lang3.StringEscapeUtils,
-        com.day.cq.commons.Doctype,
-        com.day.cq.commons.DiffInfo,
-        com.day.cq.commons.DiffService,
-        org.apache.sling.api.resource.ResourceUtil" %><%
+%><%@ page import="java.util.Iterator,
+        com.day.text.Text,
+        com.day.cq.wcm.api.PageFilter,
+        com.day.cq.wcm.api.Page,
+        com.day.cq.commons.Doctype" %><%
 
-    // first calculate the correct title - look for our sources if not set in paragraph
-    String title = properties.get(NameConstants.PN_TITLE, String.class);
-    if (title == null || title.equals("")) {
-        title = resourcePage.getPageTitle();
-    }
-    if (title == null || title.equals("")) {
-        title = resourcePage.getTitle();
-    }
-    if (title == null || title.equals("")) {
-        title = resourcePage.getName();
-    }
+    // get starting point of navigation
+    long absParent = currentStyle.get("absParent", 2L);
+    String navstart = Text.getAbsoluteParent(currentPage.getPath(), (int) absParent);
 
-    // escape title
-    title = xssAPI.filterHTML(title);
-    
-    // check if we need to compute a diff
-    String diffOutput = null;
-    DiffInfo diffInfo = resource.adaptTo(DiffInfo.class);
-    if (diffInfo != null) {
-        DiffService diffService = sling.getService(DiffService.class);
-        ValueMap map = ResourceUtil.getValueMap(diffInfo.getContent());
-        String diffText = map.get(NameConstants.PN_TITLE, "");
-        // if the paragraph has no own title, we use the current page title(!)
-        if (diffText == null || diffText.equals("")) {
-            diffText = title;
-        } else {
-            diffText = xssAPI.filterHTML(diffText);
-        }
-        diffOutput = diffInfo.getDiffOutput(diffService, title, diffText, false);
-        if (title.equals(diffOutput)) {
-            diffOutput = null;
+    //if not deep enough take current node
+    if (navstart.equals("")) navstart=currentPage.getPath();
+
+    Resource rootRes = slingRequest.getResourceResolver().getResource(navstart);
+    Page rootPage = rootRes == null ? null : rootRes.adaptTo(Page.class);
+    String xs = Doctype.isXHTML(request) ? "/" : "";
+    if (rootPage != null) {
+        Iterator<Page> children = rootPage.listChildren(new PageFilter(request));
+        while (children.hasNext()) {
+            Page child = children.next();
+            %><a href="<%= xssAPI.getValidHref(child.getPath()) %>.html"><%
+            %><img alt="<%= xssAPI.encodeForHTMLAttr(child.getTitle()) %>" src="<%= xssAPI.getValidHref(child.getPath()) %>.navimage.png"<%= xs %>></a><%
         }
     }
-    String defType = currentStyle.get("defaultType", "h1");
-    String tag = properties.get("type", defType);
-
-    // use image title if type is "small" but not if diff should be displayed
-    /*if (tag.equals("h2") && diffOutput == null) {
-        String suffix = currentDesign.equals(resourceDesign) ? "" : "/" + currentDesign.getId();
-        // add mod timestamp to avoid client-side caching of updated images
-        long tstamp = properties.get("jcr:lastModified", properties.get("jcr:created", System.currentTimeMillis()));
-        suffix += "/" + tstamp + ".png";
-        String xs = Doctype.isXHTML(request) ? "/" : "";
-        %><img src="<%= xssAPI.getValidHref(resource.getPath()+".title.png"+suffix) %>" alt="<%= xssAPI.encodeForHTMLAttr(title) %>"<%=xs%>><%
-
-    // chosen title
-    } else*/ if (diffOutput == null) {
-        %><<%= tag %> class="post-title"><%= title %></<%= tag %>><%
-    // we need to display the diff output
-    } else {
-        // don't escape diff output
-        %><<%= tag %> class="post-title"><%= diffOutput %></<%= tag %>><%
-    }
-%><br/>
-<%= xssAPI %>
+%>

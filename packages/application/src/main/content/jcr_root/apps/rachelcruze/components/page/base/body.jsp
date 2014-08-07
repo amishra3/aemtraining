@@ -1,5 +1,6 @@
 <%@page session="false"%>
 <%@include file="/libs/foundation/global.jsp"%>
+<%@page import="com.day.cq.wcm.api.WCMMode,com.day.cq.wcm.api.components.IncludeOptions" %>
 
 <%--<body>
     <h1> rachelcruze Example Page </h1>
@@ -21,12 +22,17 @@
             <div class="wrap">
                 <button id="toggle-mobile-nav">X</button>
 
-                <div class="branding">
-                    logo
-                </div>
+                <%--<div class="branding">--%>
+                    <cq:include path="branding" resourceType="rachelcruze/components/logo"/>
+                <%--</div>--%>
 
-                <nav id="nav-primary">&nbsp;
-                <cq:include path="topnav" resourceType="foundation/components/topnav"/>
+                <nav id="nav-primary">
+                <%
+                    if(WCMMode.fromRequest(slingRequest) != WCMMode.EDIT) {
+                        IncludeOptions.getOptions(request, true).setDecorationTagName("");
+                    }
+                %>
+                <cq:include path="topnav" resourceType="rachelcruze/components/topnav"/>
                   <%--
                   <ul id="menu-primary-navigation" class="nav-tablet"><li id="menu-item-2132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2132"><a href="/">Home</a></li>
                     <li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="/about">About</a></li>

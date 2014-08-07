@@ -61,7 +61,7 @@
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Link to"
                         sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        name="./linkto"/>
+                        name="./linkTo"/>
                 </items>
             </column>
         </items>
