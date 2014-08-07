@@ -59,14 +59,7 @@
       <%--<ul class="social_links"><li class="facebook"><a target="_blank" href="http://facebook.com/rachelramseycruze">Facebook</a></li><li class="twitter"><a target="_blank" href="http://twitter.com/rachelcruze">Twitter</a></li><li class="pinterest"><a target="_blank" href="http://pinterest.com/rachelcruze">Pinterest</a></li><li class="youtube"><a target="_blank" href="http://youtube.com/rachelcruze">YouTube</a></li><li class="rss"><a target="_blank" href="http://rachelcruze.com/feed">RSS</a></li></ul>--%>
     </section>
 
-      <%--<ul id="menu-footer-navigation" class="nav-menu"><li id="menu-item-1092" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1092"><a href="/">Home</a></li>
-        <li id="menu-item-192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-192"><a href="/about">About</a></li>
-        <li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"><a href="/events">Events</a></li>
-        <li id="menu-item-282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-282"><a href="/resources">Resources</a></li>
-        <li id="menu-item-202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-202"><a href="http://www.daveramsey.com/store/ccruze.html">Store</a></li>
-        <li id="menu-item-272" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-272"><a href="/press">Press</a></li>
-    </ul> --%>
-         bottom nav
+         <cq:include path="bottomnav" resourceType="rachelcruze/components/bottomnav"/>
           <div class="footer-bottom">
             2014 rachelcruze.com All rights reserved.
           </div>
