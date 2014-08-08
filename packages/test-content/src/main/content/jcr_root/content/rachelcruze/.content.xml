@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2013-12-18T14:54:52.104-07:00"
+        cq:lastModified="{Date}2014-08-06T15:24:26.213-06:00"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/rachelcruze/templates/page/base"
+        cq:template="/apps/rachelcruze/templates/base"
         jcr:primaryType="cq:PageContent"
         jcr:title="RachelCruze.com Base Page"
-        sling:resourceType="rachelcruze/components/page/base"/>
+        sling:resourceType="rachelcruze/components/page/base">
+        <branding
+            jcr:lastModified="{Date}2014-08-06T12:47:45.191-06:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="&#xa;    rachel cruze"
+            linkTo="/content/rachelcruze/en"
+            logoText="rachel cruze"/>
+    </jcr:content>
+    <rep:policy/>
+    <en/>
 </jcr:root>
