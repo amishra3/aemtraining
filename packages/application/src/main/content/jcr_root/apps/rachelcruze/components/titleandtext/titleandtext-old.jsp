@@ -5,5 +5,13 @@
     if(WCMMode.fromRequest(slingRequest) == WCMMode.EDIT) { %>
         <cq:text property="text" tagClass="section-title" escapeXml="true" placeholder="<%= Placeholder.getDefaultPlaceholder(slingRequest, component, null)%>"/>
 <%  } else { %>
-        <cq:text property="text" tagName="h2" tagClass="section-title" escapeXml="true"/>
+        
 <%  } %>
+<%
+    String title = properties.get("title","");
+    String text = properties.get("text","");
+%>
+<section class="wrap">
+    <cq:text property="title" tagName="h2" escapeXml="true"/>
+    <cq:text property="text" tagName="div" escapeXml="true"/>    
+</section>
