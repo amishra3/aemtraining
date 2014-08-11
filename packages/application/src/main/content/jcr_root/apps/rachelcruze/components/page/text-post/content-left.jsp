@@ -1,6 +1,6 @@
 <%@page session="false"%>
 <%@include file="/libs/foundation/global.jsp"%>
-<%@page import="com.day.cq.wcm.api.WCMMode,com.day.cq.wcm.api.components.IncludeOptions" %>
+<%@page import="com.day.cq.wcm.api.WCMMode,com.day.cq.wcm.api.components.IncludeOptions,com.day.cq.wcm.api.Page" %>
 
 <div class="content-wrapper">
     <div class="post-wrapper">
@@ -9,7 +9,10 @@
         </div>
         <div class="single-top">
             <div class="single-topic">
-                <div class="post-topic topic-title-college-planning">topic</div>
+            <%
+                Page parentPage = currentPage.getParent();
+            %>
+                <div class="post-topic topic-title-<%= parentPage.getName() %>"><%= parentPage.getTitle() %></div>
             </div>
             <div class="single-share">
                 <!-- AddThis Button BEGIN -->

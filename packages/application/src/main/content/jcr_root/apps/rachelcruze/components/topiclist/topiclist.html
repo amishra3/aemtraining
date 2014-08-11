@@ -1,0 +1,8 @@
+<section class="wrapper topic-list">
+    <h2 class="section-title">Topics</h2>
+    <ul data-sly-use.dataProvider="${'TopicListDataProvider'}" data-sly-test="${dataProvider.topicsPage}" class="topics" data-sly-list.topic="${dataProvider.topicsPage.listChildren}">
+        <li class="topic-${topic.name}">
+            <a href="${topic.path}.html" class="topic-title-${topic.name}">${topic.title}</a>
+        </li>
+    </ul>
+</section>

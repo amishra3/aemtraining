@@ -35,11 +35,21 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <componentstyles
+                                            <text
                                                 fieldLabel="Text"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 name="./text"/>
+                                            <aboutLink
+                                                fieldLabel="About Button Link"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                name="./aboutLink"/>
+                                            <subscribeLink
+                                                fieldLabel="Subscribe Button Link"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                name="./subscribeLink"/>
                                         </items>
                                     </column>
                                 </items>

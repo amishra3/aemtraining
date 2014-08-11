@@ -31,10 +31,10 @@
         String imageHeight = image.get(image.getItemName(Image.PN_HEIGHT));
         // div around image for additional formatting
         %>
-        <%--<div class="image" id="<%= xssAPI.encodeForHTMLAttr(divId) %>">--%>
-        <%--<% image.draw(out); %><br>--%>
         <%--
-        <cq:text property="image/jcr:description" placeholder="" tagName="small" escapeXml="true"/>
+        <div class="image" id="<%= xssAPI.encodeForHTMLAttr(divId) %>">
+            <% image.draw(out); %><br>
+            <cq:text property="image/jcr:description" placeholder="" tagName="small" escapeXml="true"/>
         </div>
         --%>
         <%@include file="/libs/foundation/components/image/tracking-js.jsp"%>
@@ -45,21 +45,17 @@
                ? Placeholder.getDefaultPlaceholder(slingRequest, component, "", ddClassName)
                : "";
     %>
-<section class="wrapper about-rachel">
+<section class="wrapper about-rachel" style="border: none; padding-bottom: 0px;">
     <% image.draw(out); %>
-    <%--<img src="<%= image.getPath() %>.img.png"/>--%>
-    <%--<p class="info <%= ddClassName %>"><%= properties.get("text") %></p>--%>
     <% if(WCMMode.fromRequest(slingRequest) == WCMMode.EDIT) { %>
         <cq:text property="text" tagClass="<%= "info " + ddClassName %>" escapeXml="true" placeholder="<%= placeholder %>"/>
     <% } else { %>
         <cq:text property="text" tagName="p" tagClass="info" escapeXml="true"/>
     <% } %>
-    <%--<img src="//a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/daveramsey.com/media/3_way_universal/rachel_cruze/rachel_about_circle.png" alt="About Rachel Cruze">--%>
-    <%--<p class="info">Rachel Cruze, Dave Ramsey’s daughter, grew up learning how money works. She has a heart to empower this generation to save, give, and live intentionally.</p>--%>
-    <a class="btn" href="#">about me</a>
-    <a class="btn" href="#">subscribe</a>
+    <a class="btn" href="${properties.aboutLink}.html">about me</a>
+    <a class="btn" href="${properties.subscribeLink}.html">subscribe</a>
     <% //if (image.hasContent()) { %>
         <%--<cq:include path="socialsharingbar" resourceType="rachelcruze/components/socialsharingbar"/>--%>
     <% //} %>
 </section>
-<br style="clear: both;"/>
+<%--<br style="clear: both;"/>--%>
