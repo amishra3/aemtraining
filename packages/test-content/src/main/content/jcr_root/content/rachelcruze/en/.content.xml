@@ -2,16 +2,12 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:designPath="/etc/designs/rachelcruze"
-        cq:lastModified="{Date}2014-08-04T13:57:40.035-06:00"
+        cq:lastModified="{Date}2014-08-12T14:19:20.890-05:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/rachelcruze/templates/base"
-        jcr:language="en_us"
         jcr:primaryType="cq:PageContent"
-        jcr:title="en"
+        jcr:title="Home"
         sling:resourceType="rachelcruze/components/page/base"
-        hideInNav="true"
-        navTitle="Rachel Cruze"/>
-    <about/>
-    <topics/>
+        hideInNav="true"/>
+    <post-test/>
 </jcr:root>

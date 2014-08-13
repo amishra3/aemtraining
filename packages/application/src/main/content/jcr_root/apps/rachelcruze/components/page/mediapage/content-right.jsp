@@ -1,32 +1,15 @@
-<%@page session="false"%>
-<%@include file="/libs/foundation/global.jsp"%>
-<%@page import="com.day.cq.wcm.api.WCMMode,com.day.cq.wcm.api.components.IncludeOptions" %>
-<% if(WCMMode.fromRequest(slingRequest) == WCMMode.EDIT) { %>
-<style>
-    /* edit mode styling fix for iparsys in right sidebar */
-    section.wrapper.about-rachel {
-        width: 215px;
-    }
-</style>
-<% } %>
-<%
-    if(WCMMode.fromRequest(slingRequest) != WCMMode.EDIT) {
-        IncludeOptions.getOptions(request, true).setDecorationTagName("");
-    }
-%>
-<cq:include path="sidebar-primary" resourceType="foundation/components/iparsys"/>
-
-        <%--
 <div class="sidebar-primary">
-    <section class="wrapper about-rachel">
-        <cq:include path="aboutmebox" resourceType="rachelcruze/components/aboutmebox"/>
+  <section class="wrapper about-rachel">
+  <img src="//a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/daveramsey.com/media/3_way_universal/rachel_cruze/rachel_about_circle.png" alt="About Rachel Cruze">
+  <p class="info">Rachel Cruze, Dave Ramsey’s daughter, grew up learning how money works. She has a heart to empower this generation to save, give, and live intentionally.</p>
+  <a class="btn" href="/about">about me</a>
+  <a class="btn" href="/subscribe">subscribe</a>
 
-        <section class="wrapper social-media">
-            <ul class="social_links"><li class="facebook"><a target="_blank" href="http://facebook.com/rachelramseycruze">Facebook</a></li><li class="twitter"><a target="_blank" href="http://twitter.com/rachelcruze">Twitter</a></li><li class="pinterest"><a target="_blank" href="http://pinterest.com/rachelcruze">Pinterest</a></li><li class="youtube"><a target="_blank" href="http://youtube.com/rachelcruze">YouTube</a></li><li class="rss"><a target="_blank" href="http://rachelcruze.com/feed">RSS</a></li></ul>
-        </section>
-    </section>
-        --%>
-<%--
+<section class="wrapper social-media">
+  <ul class="social_links"><li class="facebook"><a target="_blank" href="http://facebook.com/rachelramseycruze">Facebook</a></li><li class="twitter"><a target="_blank" href="http://twitter.com/rachelcruze">Twitter</a></li><li class="pinterest"><a target="_blank" href="http://pinterest.com/rachelcruze">Pinterest</a></li><li class="youtube"><a target="_blank" href="http://youtube.com/rachelcruze">YouTube</a></li><li class="rss"><a target="_blank" href="http://rachelcruze.com/feed">RSS</a></li></ul>
+</section>
+</section>
+
 
   <section class="wrapper topic-list">
     <h2 class="section-title">Topics</h2>
@@ -53,4 +36,3 @@
   <ul class="popular-links"><li><a href="http://www.rachelcruze.com/topics/real-life-on-a-budget/where-do-i-shop-for-clothes">Where Do I Shop for Clothes?</a></li><li><a href="http://www.rachelcruze.com/topics/real-life-on-a-budget/6-quick-back-to-school-shopping-tips">6 Quick Back-to-School Shopping Tips</a></li><li><a href="http://www.rachelcruze.com/topics/debt-free-living/proof-that-you-can-become-debt-free">Proof That You Can Become Debt-Free!</a></li><li><a href=""></a></li><li><a href=""></a></li></ul></section>
 
 </div>
---%>

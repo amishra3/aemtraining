@@ -17,9 +17,9 @@
                 <items jcr:primaryType="nt:unstructured">
                     <title
                         jcr:primaryType="nt:unstructured"
-                        fieldLabel="Title text"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                         fieldDescription="Leave empty to use the page title."
+                        fieldLabel="Title"
                         name="./jcr:title"/>
                     <type
                         jcr:primaryType="nt:unstructured"
@@ -27,18 +27,18 @@
                         fieldLabel="Type / Size"
                         name="./type">
                         <items jcr:primaryType="nt:unstructured">
-                            <def
+                            <h1
                                 jcr:primaryType="nt:unstructured"
-                                text="h3"
-                                value="h3"/>
-                            <small
-                                jcr:primaryType="nt:unstructured"
-                                text="h2"
-                                value="h2"/>
-                            <large
-                                jcr:primaryType="nt:unstructured"
-                                text="h1"
+                                text="H1"
                                 value="h1"/>
+                            <h2
+                                jcr:primaryType="nt:unstructured"
+                                text="H2"
+                                value="h2"/>
+                            <h3
+                                jcr:primaryType="nt:unstructured"
+                                text="H3"
+                                value="h3"/>
                         </items>
                     </type>
                     <presets
@@ -57,11 +57,6 @@
                                 value="post-title"/>
                         </items>
                     </presets>
-                    <linkTo
-                        jcr:primaryType="nt:unstructured"
-                        fieldLabel="Link to"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        name="./linkTo"/>
                 </items>
             </column>
         </items>

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="Base page template"
+    jcr:description="RachelCruze.com Base Page"
     jcr:primaryType="cq:Template"
-    jcr:title="RachelCruze.com Base Page"
-    allowedPaths="[/content(/.*)?]"
-    ranking="{Long}1">
+    jcr:title="Rachel Cruze Base Page"
+    ranking="{Long}0">
     <jcr:content
-        cq:designPath="/etc/designs/rachelcruze"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="rachelcruze/components/page/base"/>
 </jcr:root>

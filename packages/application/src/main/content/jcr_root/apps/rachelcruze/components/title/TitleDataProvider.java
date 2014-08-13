@@ -40,20 +40,20 @@ public class TitleDataProvider extends WCMUse {
         String diffOutput = null;
         DiffInfo diffInfo = getResource().adaptTo(DiffInfo.class);
         if (diffInfo != null) {
-            DiffService diffService = getSlingScriptHelper().getService(DiffService.class);
-            ValueMap map = ResourceUtil.getValueMap(diffInfo.getContent());
-            String diffText = map.get(NameConstants.PN_TITLE, "");
-            // if the paragraph has no own title, we use the current page title(!)
-            if (diffText == null || diffText.equals("")) {
-                diffText = title;
-            } else {
-                //diffText = xssAPI.filterHTML(diffText);
-                diffText = diffText;
-            }
-            diffOutput = diffInfo.getDiffOutput(diffService, title, diffText, false);
-            if (title.equals(diffOutput)) {
-                diffOutput = null;
-            }
+          DiffService diffService = getSlingScriptHelper().getService(DiffService.class);
+          ValueMap map = ResourceUtil.getValueMap(diffInfo.getContent());
+          String diffText = map.get(NameConstants.PN_TITLE, "");
+          // if the paragraph has no own title, we use the current page title(!)
+          if (diffText == null || diffText.equals("")) {
+              diffText = title;
+          } else {
+              //diffText = xssAPI.filterHTML(diffText);
+              diffText = diffText;
+          }
+          diffOutput = diffInfo.getDiffOutput(diffService, title, diffText, false);
+          if (title.equals(diffOutput)) {
+              diffOutput = null;
+          }
         }
         String defType = getCurrentStyle().get("defaultType", "h1");
         tag = properties.get("type", defType);

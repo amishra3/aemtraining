@@ -20,7 +20,7 @@ import org.apache.sling.commons.json.io.JSONStringer;
 import org.apache.sling.commons.json.JSONException;
 import com.lampo.service.ExampleNameService;
 
-@Component(immediate = true, metatype = true, label = "CrawlServlet")
+@Component(immediate = true, metatype = true, label = "ExampleNameServlet")
 @Service
 @Properties({
     @Property(name = "sling.servlet.paths", value = "/bin/example/names"),
