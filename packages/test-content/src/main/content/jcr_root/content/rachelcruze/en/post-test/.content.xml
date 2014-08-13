@@ -8,5 +8,12 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Post Test"
         sling:resourceType="rachelcruze/components/page/text-post"
-        body-classes="sidebar sidebar-post single single-post postid-1052 single-format-standard site_rachel_cruze desktop"/>
+        body-classes="sidebar sidebar-post single single-post postid-1052 single-format-standard site_rachel_cruze desktop">
+        <post-title
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="rachelcruze/components/title" />
+        <post-subtitle
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="rachelcruze/components/plaintext" />
+    </jcr:content>
 </jcr:root>

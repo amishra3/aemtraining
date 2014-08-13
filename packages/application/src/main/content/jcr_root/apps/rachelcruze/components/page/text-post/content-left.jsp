@@ -25,7 +25,7 @@ com.day.cq.wcm.api.Page" %>
       IncludeOptions.getOptions(request, true).setDecorationTagName("");
     } %>
     <cq:include path="post-title" resourceType="rachelcruze/components/title" />
-    <div class="post-subtitle">be prepared for these expenses</div>
+    <div class="post-title"><cq:include path="subtitle" resourceType="rachelcruze/components/plaintext" /></div>
       <%-- <h2 class="post-title"><%= properties.get("jcr:title", "") %></h2> --%>
       post body
     </div>

@@ -7,7 +7,7 @@
                 <button id="toggle-mobile-nav">X</button>
 
                 <nav id="nav-primary">
-                  top nav
+                  <cq:include path="topnav" resourceType="rachelcruze/components/topnav" />
                 </nav>
             </div>
         </header>
