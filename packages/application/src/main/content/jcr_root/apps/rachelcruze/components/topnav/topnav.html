@@ -1,0 +1,5 @@
+<ul data-sly-use.dataProvider="${'TopNavDataProvider'}" data-sly-list.navItem="${dataProvider.rootPage.listChildren}" id="menu-primary-navigation" class="nav-tablet">
+  <li data-sly-test="${!navItem.hideInNav}" class="menu-item menu-item-type-post_type menu-item-object-page">
+    <a href="${navItem.path}.html">${navItem.title}</a>
+  </li>
+</ul>

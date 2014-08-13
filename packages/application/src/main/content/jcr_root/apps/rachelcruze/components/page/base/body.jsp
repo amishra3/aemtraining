@@ -5,7 +5,7 @@
         <header id="header-primary">
             <div class="wrap">
                 <button id="toggle-mobile-nav">X</button>
-
+                <cq:include path="branding" resourceType="rachelcruze/components/logo" />
                 <nav id="nav-primary">
                   <cq:include path="topnav" resourceType="rachelcruze/components/topnav" />
                 </nav>

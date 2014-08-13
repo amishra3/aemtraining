@@ -1,0 +1,4 @@
+<h1 class="logo-rc" data-sly-use.dataProvider="${'LogoDataProvider'}">
+  <a data-sly-test="${dataProvider.getLogoText}" href="${dataProvider.getLinkTo}" title="${dataProvider.getLogoText}" rel="home">${dataProvider.getLogoText}</a>
+  <a data-sly-test="${!dataProvider.getLogoText}" href="${dataProvider.getLinkTo}" title="${dataProvider.getLogoText}" rel="home" data-sly-unwrap>logo</a>
+</h1>
